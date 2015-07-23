@@ -189,11 +189,7 @@ console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the 
 
 function Validator() {
   this.email = function(email) {
-    if (email.indexOf('@') >= 0 && (email.slice(-4) === '.com' || email.slice(-4) === '.net')) {
-      return true;
-    } else {
-      return false;
-    }
+    return email.match(/[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/);
   };
 }
 
